@@ -239,7 +239,7 @@ a.button {
 
 .main-nav__section-links li {
   display: inline-block;
-  margin: 1em 0.12em 0;
+  margin: 0.5em 0 0;
 }
 
 nav a {
@@ -696,7 +696,10 @@ h4 {
 
   .main-nav__section-links {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25em;
   }
 
   .main-nav__section-links a, .main-nav__home-link__container a {
