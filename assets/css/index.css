@@ -107,37 +107,23 @@ body.is-locked {
   }
 }
 /* RSVP Floaters */
-
-
 /* Floating RSVP link */
 .floating-rsvp-wrap {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
   z-index: 998;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.5rem;
-}
-
-.floating-rsvp-cta {
-  margin: 0;
-  font-family: 'century', Georgia, serif;
-  font-size: 0.85rem;
-  color: #FAF8F3;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-  letter-spacing: 0.02em;
 }
 
 .floating-rsvp {
   display: inline-block;
-  padding: 0.65em 1.1em 0.55em;
+  padding: 0.5em 0.9em 0.45em;
   font-family: 'century', Georgia, serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #0d97a0;
   background: #FAF8F3;
   border: 1px solid rgba(13, 151, 160, 0.5);
+  border-radius: 4px;
   text-decoration: none;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   transition: background 0.2s, color 0.2s, transform 0.2s;
@@ -153,16 +139,11 @@ body.is-locked {
   .floating-rsvp-wrap {
     bottom: 1rem;
     right: 1rem;
-    gap: 0.4rem;
-  }
-
-  .floating-rsvp-cta {
-    font-size: 0.8rem;
   }
 
   .floating-rsvp {
-    padding: 0.55em 0.9em 0.45em;
-    font-size: 0.9rem;
+    padding: 0.45em 0.75em 0.4em;
+    font-size: 0.8rem;
   }
 }
 
