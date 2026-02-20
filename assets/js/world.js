@@ -152,40 +152,6 @@ function createCountdown(el, date, label) {
   setInterval(update, 1000);
 }
 
-function createStars() {
-  const starTargetSize = 75;
-  const starMinSize = 15;
-  const starChance = 0.1;
-  const scrollWidth = document.scrollingElement.scrollWidth;
-  const scrollHeight= document.scrollingElement.scrollHeight;
-  const rows = Math.round(scrollHeight / starTargetSize);
-  const columns = Math.round(scrollWidth / starTargetSize);
-  const w = Math.floor(scrollWidth  / columns);
-  const h = scrollHeight / rows;
-
-  const fragment = document.createDocumentFragment()
-
-  for (let y = 0; y < rows; ++y) {
-    for (let x = 0; x < columns; ++x) {
-      if (Math.random() < starChance) {
-        const size =
-          starMinSize + Math.random() * (starTargetSize - starMinSize);
-        fragment.appendChild(getStar(x, y, w, h, size))
-      }
-    }
-  }
-
-  document.body.appendChild(fragment)
-}
-
-function getStar(x, y, w, h, size) {
-  const star = document.createElement("div")
-  star.className = `background-star background-star-${Math.ceil(Math.random() * 3)}`
-  star.style.transform = `translate(${Math.floor(x * w)}px, ${Math.floor(y * h)}px)`
-  star.style.width = Math.floor(size) + 'px'
-  star.style.height = Math.floor(size) + 'px'
-  return star
-}
 
 function formatCountdown(days, hours, minutes, seconds, label) {
   days = addZeros(days);
