@@ -12,6 +12,19 @@
       if (overlay) overlay.style.display = 'none';
       if (site) site.style.display = 'block';
       document.body.classList.remove('is-locked');
+      var bgMusic = document.getElementById('bg-music');
+      if (bgMusic) {
+        bgMusic.volume = 0.5;
+        bgMusic.play().catch(function () {});
+
+        function startMusicOnInteraction() {
+          bgMusic.play().catch(function () {});
+          document.removeEventListener('click', startMusicOnInteraction);
+          document.removeEventListener('touchstart', startMusicOnInteraction);
+        }
+        document.addEventListener('click', startMusicOnInteraction, { once: true });
+        document.addEventListener('touchstart', startMusicOnInteraction, { once: true });
+      }
     }
   
     try {

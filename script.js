@@ -1,6 +1,24 @@
 // Smooth scroll behavior is handled by CSS
 // Add any interactive enhancements here
 
+// Music mute toggle (top of page)
+(function () {
+  var btn = document.getElementById('music-mute');
+  var bgMusic = document.getElementById('bg-music');
+  var iconOn = btn && btn.querySelector('.music-mute__icon--on');
+  var iconOff = btn && btn.querySelector('.music-mute__icon--off');
+  if (!btn || !bgMusic) return;
+  btn.addEventListener('click', function () {
+    bgMusic.muted = !bgMusic.muted;
+    if (iconOn) iconOn.hidden = bgMusic.muted;
+    if (iconOff) iconOff.hidden = !bgMusic.muted;
+    btn.setAttribute('title', bgMusic.muted ? 'Unmute music' : 'Mute music');
+    btn.setAttribute('aria-label', bgMusic.muted ? 'Unmute background music' : 'Mute background music');
+  });
+  if (iconOn) iconOn.hidden = bgMusic.muted;
+  if (iconOff) iconOff.hidden = !bgMusic.muted;
+})();
+
 // Fade in on scroll
 const observerOptions = {
     threshold: 0.1,
