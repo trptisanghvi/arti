@@ -108,6 +108,40 @@ body.is-locked {
     font-size: 1.7rem;
   }
 }
+/* Music mute button (top right) */
+.music-mute {
+  position: fixed;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 1000;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid rgba(250, 248, 243, 0.4);
+  border-radius: 50%;
+  background: rgba(6, 24, 32, 0.75);
+  color: #FAF8F3;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.music-mute:hover {
+  background: rgba(13, 151, 160, 0.9);
+  border-color: rgba(250, 248, 243, 0.6);
+}
+
+.music-mute .music-mute__icon {
+  display: block;
+  line-height: 0;
+}
+
+.music-mute .music-mute__icon[hidden] {
+  display: none;
+}
+
 /* RSVP Floaters */
 /* Floating RSVP link */
 .floating-rsvp-wrap {
